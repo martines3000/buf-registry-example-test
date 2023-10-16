@@ -16,5 +16,9 @@ plugins:
   # Generate the JavaScript code and TypeScript types
   - plugin: buf.build/connectrpc/es:v1.1.2
     out: gen
+    opt:
+      - target=ts
   - plugin: buf.build/bufbuild/es
     out: gen
+    opt:
+      - target=ts
