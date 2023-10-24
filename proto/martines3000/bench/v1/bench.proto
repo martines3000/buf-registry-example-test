@@ -2,13 +2,15 @@ syntax = "proto3";
 
 package martines3000.bench.v1;
 
+import "google/protobuf/struct.proto";
+
 message SimpleRequest { string tries = 1; }
 message ComplexRequest { string tries = 1; }
 
 message SimpleResponse { string data = 1; }
 
 message ComplexResponse {
-  map<string, string> credential_subject = 1
+  google.protobuf.Struct credential_subject = 1
       [ json_name = "credentialSubject" ];
   map<string, string> issuer = 2;
   repeated string type = 3;
